@@ -136,7 +136,7 @@ You need to install the following packages:
 	autoconf automake autotools-dev libdbus-1-dev \
 	pkg-config binutils-mingw-w64-i686 gcc-mingw-w64 \
 	mingw-w64-i686-dev mingw-w64-common win-iconv-mingw-w64-dev \
-	xmlto
+	xmlto imagemagick libmagickwand-dev gettext libtool
 
 Then, build Zbar with:
 
@@ -147,7 +147,7 @@ Then, build Zbar with:
     CC=i686-w64-mingw32-gcc ./configure --host=i686-w64-mingw32 \
 	--prefix=/usr/local/win32 --with-directshow \
 	--without-gtk --without-python --without-qt --without-java \
-	--without-imagemagick --enable-pthread
+	--enable-pthread
 
     make
 
