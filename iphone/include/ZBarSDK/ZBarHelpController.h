@@ -29,17 +29,14 @@
 @protocol ZBarHelpDelegate
 @optional
 
-- (void) helpControllerDidFinish: (ZBarHelpController*) help;
+- (void)helpControllerDidFinish:(ZBarHelpController *)help;
 
 @end
 
-
 // failure dialog w/a few useful tips
 
-@interface ZBarHelpController : UIViewController
-                              < WKNavigationDelegate,
-                                UIAlertViewDelegate >
-{
+@interface ZBarHelpController
+    : UIViewController <WKNavigationDelegate, UIAlertViewDelegate> {
     NSString *reason;
     id delegate;
     WKWebView *webView;
@@ -47,15 +44,16 @@
     UIBarButtonItem *doneBtn, *backBtn, *space;
     NSURL *linkURL;
     NSUInteger orientations;
+    UIView *controls;
 }
 
 @property (nonatomic, assign) id<ZBarHelpDelegate> delegate;
 
 // designated initializer
-- (id) initWithReason: (NSString*) reason;
+- (id)initWithReason:(NSString *)reason;
 
-- (BOOL) isInterfaceOrientationSupported: (UIInterfaceOrientation) orientation;
-- (void) setInterfaceOrientation: (UIInterfaceOrientation) orientation
-                       supported: (BOOL) supported;
+- (BOOL)isInterfaceOrientationSupported:(UIInterfaceOrientation)orientation;
+- (void)setInterfaceOrientation:(UIInterfaceOrientation)orientation
+		      supported:(BOOL)supported;
 
 @end
